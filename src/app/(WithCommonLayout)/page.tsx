@@ -1,6 +1,3 @@
-
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
 import { title, subtitle } from "@/src/components/primitives";
 
 export default function Home() {
@@ -16,14 +13,6 @@ export default function Home() {
         <div className={subtitle({ class: "mt-4" })}>
           Beautiful, fast and modern React UI library.
         </div>
-      </div>
-
-      <div className="mt-8">
-        <Snippet hideCopyButton hideSymbol variant="bordered">
-          <span>
-            Get started by editing <Code color="primary">app/page.tsx</Code>
-          </span>
-        </Snippet>
       </div>
     </section>
   );
