@@ -1,15 +1,10 @@
+/* eslint-disable react/jsx-key */
+import CardSkeleton from "@/srccomponents/UI/CardSkelton";
+import Container from "@/srccomponents/UI/Container";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
 
-import Card from "@/src/components/UI/Card";
-import { getRecentPosts } from "@/srcservices/RecentPosts";
-import Container from "@/srccomponents/UI/Container";
-import { IPost } from "@/srctypes";
-
-
 export default async function RecentPosts() {
-  const { data: posts } = await getRecentPosts();
-
   return (
     <Container>
       <div className="section-title my-8">
@@ -19,12 +14,8 @@ export default async function RecentPosts() {
         </p>
       </div>
       <div className="my-8 grid justify-center gap-10 sm:grid-cols-1 md:grid-cols-3">
-        {/* Old Code */}
-        {/* {posts.map((post) => (
-          <p>{post.title}</p>
-        ))} */}
-        {posts.map((post: IPost) => (
-          <Card key={post?._id} post={post} />
+        {[...Array(9)].map(() => (
+          <CardSkeleton/>
         ))}
       </div>
       <div className="flex justify-center">
